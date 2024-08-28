@@ -71,7 +71,7 @@ async def points(ctx):
         await ctx.send(f"今天 ({now_str}) 沒有找到含有 'line' 或 'LP' 的相關文章。")
 
 # 設置機器人 token
-TOKEN = DISCORD_TOKEN # 用你的 Discord 機器人 token 替換
-YOUR_CHANNEL_ID = DISCORD_CHANNEL # 用你的頻道ID替換
+TOKEN = os.environ['TOKEN'] # 用你的 Discord 機器人 token 替換
+YOUR_CHANNEL_ID = os.environ['CHANNEL_ID'] # 用你的頻道ID替換
 #keep_alive.keep_alive()
 bot.run(TOKEN)
