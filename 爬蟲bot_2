@@ -38,7 +38,7 @@ def find_articles_on_date(target_date):
 # 每天定時抓取並發布文章
 @tasks.loop(hours=8)
 async def daily_article_task():
-    channel = bot.get_channel(YOUR_CHANNEL_ID)  # 用你的頻道ID替換
+    channel = bot.get_channel(int(YOUR_CHANNEL_ID))  # 用你的頻道ID替換
     today = datetime.now()
     now_str = today.strftime("%m/%d").lstrip('0')  # 移除月份中的前導0
     print(f"今天是{now_str}\n")
